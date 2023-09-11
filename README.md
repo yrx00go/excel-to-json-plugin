@@ -1,7 +1,6 @@
-# Base JS SDK DEMO
+# 将飞书表格改成json文件格式
 ## node: 16+
-1. install pnpm: npm install -g pnpm 
-2. pnpm i
-3. pnpm run start
+npm i
+npm run dev
 
 Now, you can see the output URL in the console, please click, then open the page, and copy the URL

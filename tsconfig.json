@@ -1,21 +1,25 @@
 {
-  "compilerOptions": {
-    "target": "ESNext",
-    "useDefineForClassFields": true,
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "allowJs": false,
-    "skipLibCheck": true,
-    "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
-  },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+    "extends": "@vue/tsconfig/tsconfig.json",
+    "compilerOptions": {
+        "target": "ES6", // 根据您的项目需求选择合适的 ECMAScript 版本
+        "module": "CommonJS", // 使用 CommonJS 模块系统
+        "moduleResolution": "node", // 使用 Node.js 风格的模块解析
+        "outDir": "./dist", // 输出目录
+        "rootDir": "./src", // 源代码目录
+        "strict": true, // 启用 TypeScript 严格模式
+        "baseUrl": ".", // 基本 URL，通常与 "paths" 配合使用
+        "paths": {
+            "@lark-base-open/js-sdk": [
+                "node_modules/@lark-base-open/js-sdk"
+            ]
+            // 将导入 "@lark-base-open/js-sdk" 的路径映射到实际模块位置
+        },
+        // 其他选项...
+    },
+    "include": [
+        "src/**/*.ts"
+    ], // 需要编译的文件或文件夹
+    "exclude": [
+        "node_modules"
+    ] // 不需要编译的文件或文件夹
 }
